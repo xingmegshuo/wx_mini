@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/logs/logs",
+    "pages/main/main",
+    "pages/game/game",
+    "pages/my/my",
+    "pages/exchange/exchange",
+    "pages/auth/index",
+    "pages/detial/detial",
+    "pages/setting/setting"
+  ],
+  "plugins": {
+    "crypto": {
+      "version": "0.0.003",
+      "provider": "wxf25d506ff81e19fb"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/game/game",
+        "text": "游戏"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      },
+      {
+        "pagePath": "pages/exchange/exchange",
+        "text": "兑换"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

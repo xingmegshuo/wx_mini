@@ -1,0 +1,14 @@
+<!--pages/detial/detial.wxml-->
+	<image class="header-bg" src="../../image/detial.png"></image>
+
+<view class="main">
+
+	<view class="title">{{active.title}}</view>
+	<view class='desc'>{{active.description}}</view>
+	<view class='time'>活动开始时间：<text>{{active.begin}}</text></view>
+	<view class="time">活动结束时间：<text>{{active.over}}</text></view>
+	<view class='img'>
+		<image src="{{active.img}}"></image>
+	</view>
+	<view class='content'>{{active.content}}</view>
+</view>

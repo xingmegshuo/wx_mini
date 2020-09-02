@@ -1,0 +1,34 @@
+<!--pages/my/my.wxml-->
+<view class="main">
+	<image class="header-bg" src="../../image/my.png"></image>
+  <image class="userinfo-avatar" src='{{userinfo.user.avatar_url}}' bindtap="setting" ></image>
+  <view class='userinfo-name'>{{userinfo.user.nick_name}}</view> 
+  <view class='userinfo-mes'>
+    <view class='a-item'>
+      <image class="icon" src="../../image/meng.png"></image>
+      <view class='my'>
+        我的总萌:
+        <view style='padding:0 10rpx;color: #69C3AA;font-weight: bold;'> 0 </view>
+      </view>
+    </view>
+    <view class='a-item'>
+      <image class="icon" src="../../image/catch.png"></image>
+      <view class='my'>
+        我的红包:
+        <view style='padding: 0 10rpx;color: #666666;font-weight: bold;'> 0 </view>
+      </view>
+    </view>
+    <view class='a-item'>
+      <image class="icon" src="../../image/money.png"></image>
+      <view class='my'>
+        我的余额:
+        <view style='padding: 0 10rpx;color: #FF5777;font-weight: bold;'> 0 </view>
+      </view>
+    </view>
+  </view>
+  <view class="title" wx:if='{{games.length>0}}'>我的游戏</view>
+  <view class="title" wx:else>请在游戏中授权</view>
+  <view class="my_game"></view>
+
+  
+</view>

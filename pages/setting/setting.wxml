@@ -1,0 +1,5 @@
+<!--pages/setting/setting.wxml-->
+<view class="title">我的设置</view>
+<view>新活动通知<switch>打开</switch></view>
+<view>兑换通知<switch>打开</switch></view>
+<view>我的收货地址</view>

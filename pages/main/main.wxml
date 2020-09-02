@@ -1,0 +1,23 @@
+<!--pages/main/main.wxml-->
+<view class="header">
+	<!-- 活动页面 首页 -->
+
+	<image class="header-bg" src="../../image/auth.png"></image>
+	<text class="title" wx:if="{{active.length>0}}">我们的活动</text>
+	<text class="title" wx:else>暂无活动</text>
+	<view class="active" wx:key="index" wx:for="{{active}}" data-id='{{item.id}}' bindtap="look_detial" >
+		<image class="active-img" src="{{item.img}}"></image>
+		<view class="active-title">{{item.title}}</view>
+		<view class="active-text">{{item.description}}</view>
+		<view class="active-time">
+			<view>
+				活动开始：<text>{{item.begin}}</text>
+			</view>
+			<view>
+				活动结束：<text>{{item.over}}</text>
+			</view>
+		</view>
+
+	</view>
+
+</view>

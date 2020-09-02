@@ -1,0 +1,25 @@
+<!--pages/game/game.wxml-->
+<view class="game-center">
+	<image class="header-bg" src="../../image/auth.png"></image>
+	<text class="text">游戏中心</text>
+	<view class="except" wx:if='{{games.length==0 }}'>
+		<text>抱歉，暂无更多信息</text>
+	</view>
+	<view wx:else class="games">
+		<view class="game" wx:key='index' wx:for='{{games}}' bindtap="openGame" data-id="{{item.app_id}}">
+			<image src="{{item.img}}"></image>
+			<text>{{item.app_config.name}}</text>
+		</view>
+	</view>
+	<text class="text">其它内容</text>
+	<view class="games"  wx:if='{{orther.length==0 }}'>
+		<text>抱歉，暂无更多信息</text>
+	</view>
+	<view wx:else class="games" >
+		<view class="game" wx:key='index'  wx:for='{{orther}}' bindtap="openOrther" data-id="{{item.app_id}}">
+			<image src="{{item.img}}"></image>
+			<text>{{item.app_config.name}}</text>
+		</view>
+	</view>
+
+</view>
