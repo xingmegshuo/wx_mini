@@ -1,7 +1,17 @@
 /* pages/exchange/exchange.wxss */
 
 
-
+page {
+  height: 100%;
+}
+.header-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-size: 100% 100%;
+  z-index: -1;
+  margin-top: -3%;
+}
 
 .title {
   display: flex;
@@ -13,12 +23,3 @@
   margin-bottom: 50rpx;
 }
 
-.info {
-  margin: 5%;
-  border-style: solid;
-  box-shadow:0px 2px 4px 2px goldenrod;
-  border-width: 0rpx;
-  /* background-color: black; */
-  display: flex;
-  height: 400rpx;
-}

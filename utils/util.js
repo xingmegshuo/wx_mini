@@ -18,6 +18,7 @@ const formatNumber = n => {
 
 
 function send_request(url,data,header,method, callback){
+  // url 请求地址 data json发送数据 header jwt秘钥，不携带可以为空 method 请求方式 callback 回调函数
   var url = 'https://www.menguoli.com/'+url+'/';
   // console.log(url)
   wx.request({

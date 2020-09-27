@@ -34,9 +34,12 @@ Page({
     var that = this
     util.send_request('data/activity', '', jwt, 'GET', function (active) {
       // console.log(active)
-      that.setData({
-        active: active
-      })
+      if(active.count!=0){
+        that.setData({
+          active: active.results
+        })
+      }
+
     })
 
 

@@ -19,14 +19,15 @@ Page({
   onLoad: function (options) {
     var that = this
     var jwt = app.globalData.userInfo.jwt
-    util.send_request('data/apps', '', jwt, 'GET', function (games) {
+    util.send_request('data/app', '', jwt, 'GET', function (games) {
+      console.log(games.results)
       const game = []
       const orthers = []
-      for (let i in games) {
-        if (games[i].app_config.type == 0) {
-          orthers.push(games[i])
+      for (let i in games.results) {
+        if (games.results[i].app_config.type == 0) {
+          orthers.push(games.results[i])
         } else {
-          game.push(games[i])
+          game.push(games.results[i])
         }
       }
       that.setData({

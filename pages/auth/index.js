@@ -23,11 +23,10 @@ Page({
   getUserInfo: function (e) {
     wx.getUserInfo({
       success: res => {
-        var that = this
-        console.log(res.iv)
-        console.log(res.encryptedData)
-        console.log(app.globalData.userInfo.user.session_key)
+
         var data = { 'name': 'ml', 'session_key': app.globalData.userInfo.user.session_key, 'openid': app.globalData.userInfo.user.openid, 'iv': res.iv, 'encrypteData': res.encryptedData }
+        console.log(data)
+        console.log(app.globalData.userInfo.jwt)
         util.send_request('api/wx_auth', data, app.globalData.userInfo.jwt, 'POST', function (userinfo) {
           // console.log(userinfo)
           that.setData({

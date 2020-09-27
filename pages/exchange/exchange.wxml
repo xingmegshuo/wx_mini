@@ -1,3 +1,5 @@
 <!--pages/exchange/exchange.wxml-->
+	<image class="header-bg" src="../../image/mall.png"></image>
+
 <view class="title">兑换商城</view>
 <view class='info'>暂无更多内容</view>

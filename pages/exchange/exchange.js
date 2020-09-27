@@ -1,11 +1,14 @@
 // pages/exchange/exchange.js
 const app = getApp()
+const util = require('../../utils/util.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    product:{}
 
   },
 
@@ -13,6 +16,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
+    var jwt =  app.globalData.userInfo.jwt
+    util.send_request('data/product', '', jwt, 'GET', function (products) {
+      console.log(products.results)
+      if(products.count!=0){
+        that.setData({
+          product: products.results
+        })
+      }
+    })
 
   },
 
