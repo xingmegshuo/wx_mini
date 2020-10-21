@@ -1,5 +1,42 @@
 <!--pages/exchange/exchange.wxml-->
-	<image class="header-bg" src="../../image/mall.png"></image>
+<image class="header-bg" src="../../image/exbg.jpg"></image>
 
-<view class="title">兑换商城</view>
-<view class='info'>暂无更多内容</view>
+<view class="mall" wx:if='{{product.length==0 }}'>抱歉，暂无更多信息</view>
+<!-- <view class="mall" wx:else>
+	<view class="first">
+		<image src="https://www.menguoli.com/{{product_1.productImg}}" data-id="{{product_1.id}}" bindtap="product"></image>
+		<text>{{product_1.name}}</text>
+	</view>
+	<view class="second">
+		<image src="https://www.menguoli.com/{{product_2.productImg}}" data-id="{{product_2.id}}" bindtap="product"></image>
+		<text>{{product_2.name}}</text>
+	</view>
+	<view class="third">
+		<image src="https://www.menguoli.com/{{product_3.productImg}}" data-id="{{product_3.id}}" bindtap="product"></image>
+		<text>{{product_3.name}}</text>
+	</view>
+</view> -->
+<view class="mall">
+	<swiper class="imageContainer" bindchange="handleChange" display-multiple-items="3" interval="100000000000"
+
+		current="{{_num}}" previous-margin="0px" next-margin="0px" circular autoplay>
+		<block wx:for="{{product}}" wx:key="{{index}}" class='bb'>
+			<swiper-item > 
+				<view class="product {{currentIndex == index ? 'active': ''}}">
+				<image data-id="{{item.id}}" bindtap="product" id="{{index}}" 
+					src="https://www.menguoli.com/{{item.productImg}}"></image>
+				<text class="itemtext">{{item.name}}</text>
+			</view>
+			</swiper-item>
+	</block>
+	</swiper>
+</view>
+
+
+<view class="nav">
+	<view bindtap="all">总览</view>
+	<view bindtap="new">新品</view>
+	<view bindtap="discount">折扣</view>
+	<view bindtap="meng">萌度</view>
+</view>
+<view class="title">{{title}}</view>

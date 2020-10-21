@@ -1,0 +1,30 @@
+<!--pages/cat/cat.wxml-->
+<!-- <image class="header-bg" src="../../image/mall.png"></image> -->
+<view class="header">
+	<view>
+		<checkbox data-check="{{checkAll}}" bindtap="get_all" checked="{{checkAll}}" />全选
+
+	</view>
+</view>
+<checkbox-group >
+
+	<view class="info" wx:if='{{cat.length==0 }}'>抱歉，您还未添加任何商品</view>
+	<view wx:else class="cat">
+
+		<view class="info" wx:key='index' wx:for='{{cat}}' bindtap="" data-id="">
+			<view>
+				<checkbox value="{{item.id}}" checked="{{item.checked}}"  data-check="{{item.id}}" bindtap="choose"/>
+			</view>
+			<image src="https://www.menguoli.com{{item.img}}"></image>
+			<view class="item">商品名称：{{item.name}}</view>
+			<view class="item">商品数量：{{item.num}}个</view>
+			<view class="item">商品总价：{{item.price*item.num}}¥</view>
+		</view>
+	</view>
+</checkbox-group>
+<button bindtap="payment" class="ok" size="mini">结算</button>
+<button bindtap="delete" class="delete" size="mini">删除</button>
+<view class='placeholder-view'></view>
+<mp-dialog title="test" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+        <view>test content</view>
+</mp-dialog>

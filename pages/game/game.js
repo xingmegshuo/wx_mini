@@ -20,7 +20,6 @@ Page({
     var that = this
     var jwt = app.globalData.userInfo.jwt
     util.send_request('data/app', '', jwt, 'GET', function (games) {
-      console.log(games.results)
       const game = []
       const orthers = []
       for (let i in games.results) {
@@ -96,6 +95,7 @@ Page({
     const id = event.currentTarget.dataset.id
     wx.navigateToMiniProgram({
       appId:id,
+      extraData:{'unionId':app.globalData.userInfo.user.unionId},
       // appId:'wx6402b67c8443b465',
     })
   },

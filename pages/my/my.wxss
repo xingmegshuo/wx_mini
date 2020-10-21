@@ -32,15 +32,7 @@
 }
 
 
-.title {
-  display: flex;
-  z-index: 1;
-  font-size: 24px;
-  font-weight: bolder;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 50rpx;
-}
+
 .icon {
   width: 48px;
   height: 48px;
@@ -52,4 +44,12 @@
 .my view{
   /* margin-top: -10px; */
   margin-left: 20px;
+}
+
+.btn{
+  margin-top: 50px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

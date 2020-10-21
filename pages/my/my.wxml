@@ -1,7 +1,7 @@
 <!--pages/my/my.wxml-->
 <view class="main">
 	<image class="header-bg" src="../../image/my.png"></image>
-  <image class="userinfo-avatar" src='{{userinfo.user.avatar_url}}' bindtap="setting" ></image>
+  <image class="userinfo-avatar" src='{{userinfo.user.avatar_url}}' ></image>
   <view class='userinfo-name'>{{userinfo.user.nick_name}}</view> 
   <view class='userinfo-mes'>
     <view class='a-item'>
@@ -26,9 +26,8 @@
       </view>
     </view>
   </view>
-  <view class="title" wx:if='{{games.length>0}}'>我的游戏</view>
-  <view class="title" wx:else>请在游戏中授权</view>
-  <view class="my_game"></view>
+  <view class="btn" bindtap="activate">消息通知设置</view>
+  <view class="btn" bindtap="address">收货地址管理</view>
+  <view class="btn" bindtap="order">订单历史记录</view>
 
-  
 </view>

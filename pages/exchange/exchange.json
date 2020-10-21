@@ -1,4 +1,5 @@
 {
-  "navigationBarTitleText": "萌果果",
-  "usingComponents": {}
+  "navigationBarTitleText": "萌果果-杂货铺",
+  "usingComponents": {},
+  "isableScroll": true
 }

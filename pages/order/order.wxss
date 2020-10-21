@@ -1,0 +1,40 @@
+/* pages/order/order.wxss */
+.page{
+  height: 100%;
+  width: 100%;
+}
+.title {
+  margin:5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order {
+  margin:5%;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+.item{
+  width: 100%;
+  margin-top: 10%;
+}
+.button{
+  margin: 2%;
+  background-color: green;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+}
+.delete{
+  margin: 2%;
+  background-color:red;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+}

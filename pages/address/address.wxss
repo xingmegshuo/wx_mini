@@ -1,0 +1,49 @@
+/* pages/address/address.wxss */
+page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;  
+}  
+.product-name-wrap{
+  margin: 0px 10px;
+  font-size: 14px;
+  color: #404040;
+}
+.ui-list-item-info{
+  margin: 5px 0px;
+}
+.ui-list-item-address{
+  color: #585c64;
+}
+.ui-list-item-time{
+  margin: 5px 0px;
+}
+.ui-list-item-del{
+  position: absolute;
+  right: 10px;
+  color: red;
+}
+/* 分割线 */
+.separate {
+  margin: 5px 0px;
+  height: 2rpx;
+  background-color:beige;
+}
+.add-address{
+  margin: 5% auto;
+  margin-top: 50px;
+  width: 150px;
+  height: 35px;
+  border: 1px #000 solid;
+  line-height: 35px;
+  text-align: center;
+  color: #000;
+  border-radius: 5rpx;
+      display: block;
+  background-color: red;
+}
+.add-img{
+  margin-right: 15rpx;
+  width: 15px;
+  height: 15px;
+}

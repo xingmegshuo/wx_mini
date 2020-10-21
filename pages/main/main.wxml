@@ -3,7 +3,7 @@
 	<!-- 活动页面 首页 -->
 
 	<image class="header-bg" src="../../image/auth.png"></image>
-	<text class="title" wx:if="{{active.length>0}}">我们的活动</text>
+	<text class="title" wx:if="{{active.length>0}}"></text>
 	<text class="title" wx:else>暂无活动</text>
 	<view class="active" wx:key="index" wx:for="{{active}}" data-id='{{item.id}}' bindtap="look_detial" >
 		<image class="active-img" src="{{item.img}}"></image>

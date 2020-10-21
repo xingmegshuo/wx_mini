@@ -39,10 +39,7 @@ Page({
           active: active.results
         })
       }
-
     })
-
-
   },
 
   /**

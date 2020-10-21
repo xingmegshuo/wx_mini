@@ -1,0 +1,27 @@
+<!--pages/order/order.wxml-->
+<view class="title" wx:if="{{order.length ==0}}">您还没有订单</view>
+<view class="order" wx:else>
+  <view class="item" wx:key='index' wx:for="{{order}}"  wx:for-item="dayItem">
+    <view>订单编号：{{dayItem.number}}</view>
+    <view wx:if="{{dayItem.status==false}}">
+      订单状态: 未付款
+    </view>
+    <view wx:if="{{dayItem.is_fial==true}}">
+      订单状态: 已失效
+    </view>
+    <view wx:if="{{dayItem.is_send==true&&dayItem.status==true}}">
+      订单状态: 已发货
+    </view>
+    <view wx:if="{{dayItem.is_over==true&&dayItem.status==true}}">
+      订单状态: 已完成
+    </view>
+    <view>订单备注:{{dayItem.remarks}}</view>
+    <view>支付金额:{{dayItem.money}}¥</view>
+    订单详情:
+    <view wx:key='i' wx:for="{{dayItem.car}}">
+      <view>商品: {{item.product}}         数量: {{item.num}}个</view>
+    </view>
+    <view class="button" wx:if="{{dayItem.status==false}}">去付款</view>
+    <view data-id="{{dayItem.id}}" bindtap="delete" class="delete">删除</view>    
+  </view>
+</view>

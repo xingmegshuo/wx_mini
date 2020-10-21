@@ -17,8 +17,13 @@ Component({
       pagePath: "/pages/exchange/exchange",
       iconPath: "/image/5.png",
       selectedIconPath: "/image/6.png",
-      text: "兑换"
-    }, {
+      text: "商城"
+    },{
+      pagePath: "/pages/cat/cat",
+      iconPath: "/image/dcat.png",
+      selectedIconPath: "/image/cat.png",
+      text: "购物车"
+    },{
       pagePath: "/pages/my/my",
       iconPath: "/image/7.png",
       selectedIconPath: "/image/8.png",

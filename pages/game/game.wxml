@@ -1,7 +1,6 @@
 <!--pages/game/game.wxml-->
 <view class="game-center">
 	<image class="header-bg" src="../../image/auth.png"></image>
-	<text class="text">游戏中心</text>
 	<view class="except" wx:if='{{games.length==0 }}'>
 		<text>抱歉，暂无更多信息</text>
 	</view>

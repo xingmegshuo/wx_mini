@@ -8,8 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    product:{}
 
+    product: {},
+    currentIndex: 1,
+    title: '商品总览',
   },
 
   /**
@@ -17,12 +19,13 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    var jwt =  app.globalData.userInfo.jwt
+    var jwt = app.globalData.userInfo.jwt
     util.send_request('data/product', '', jwt, 'GET', function (products) {
       console.log(products.results)
-      if(products.count!=0){
+      if (products.count != 0) {
         that.setData({
-          product: products.results
+          product: products.results,
+
         })
       }
     })
@@ -91,5 +94,41 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  product: function (event) {
+    wx.navigateTo({
+      url: '../product/product?id=' + event.currentTarget.dataset.id
+    })
+  },
+  all: function (e) {
+    this.setData({
+      title: '商品总览'
+    })
+  },
+  new: function (e) {
+    this.setData({
+      title: '新品推荐'
+    })
+  },
+  discount: function (e) {
+    this.setData({
+      title: '最新折扣'
+    })
+  },
+  meng: function (e) {
+    this.setData({
+      title: '萌度兑换'
+    })
+  },
+  handleChange: function (e) {
+    let index = 1;
+    if (e.detail.current == this.data.product.length - 1) {
+      index = 0;
+    } else {
+      index = e.detail.current + 1
+    }
+    this.setData({
+      currentIndex: index,
+    });
   }
 })

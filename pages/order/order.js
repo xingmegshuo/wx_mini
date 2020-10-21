@@ -1,5 +1,4 @@
-// pages/my/my.js
-
+// pages/order/order.js
 const util = require('../../utils/util.js')
 const app = getApp()
 
@@ -9,15 +8,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userinfo: {},
-
+    order: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    util.send_request('api/order', '', app.globalData.userInfo.jwt, 'GET', function (res) {
+      console.log(res)
+      that.setData({
+        order: res.info
+      })
+    })
   },
 
   /**
@@ -31,22 +35,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 4
-      })
-    }
-    if (app.globalData.auth == 'false') {
-      wx.navigateTo({
-        url: '../auth/index',
-      })
-    } else {
-      // console.log(app.globalData.userInfo)
-      this.setData({
-        userinfo: app.globalData.userInfo,
-      })
-    }
+
   },
 
   /**
@@ -83,22 +72,21 @@ Page({
   onShareAppMessage: function () {
 
   },
-  activate: function (event) {
-    wx.requestSubscribeMessage({
-      tmplIds: ['dKHvREMUqAmPstdPXe02qVxcOIw86DhDeGBjub5xpzU', 'yEAkvAryj4yjltCQGbmsVrRd32j82sjLQGD9StKx7ds'],
-      complete(res) {
-        console.log(res)
+  delete: function (e) {
+    let data = { 'orderId': e.currentTarget.dataset.id, 'delete': '1' }
+    var that = this
+    util.send_request('api/order', data, app.globalData.userInfo.jwt, 'PUT', function (res) {
+      for (let i = 0; i < that.data.order.length; i++) {
+        if (that.data.order[i].id == e.currentTarget.dataset.id) {
+          that.data.order.splice(i, 1)
+          that.setData({
+            order: that.data.order
+          })
+        }
       }
     })
-  },
-  address: function (event) {
-    wx.navigateTo({
-      url: '../address/address',
-    })
-  },
-  order:function(event){
-    wx.navigateTo({
-      url: '../order/order',
+    wx.showToast({
+      title: '删除成功',
     })
   }
 })

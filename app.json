@@ -7,7 +7,10 @@
     "pages/exchange/exchange",
     "pages/auth/index",
     "pages/detial/detial",
-    "pages/setting/setting"
+    "pages/cat/cat",
+    "pages/address/address",
+    "pages/product/product",
+    "pages/order/order"
   ],
   "plugins": {
     "crypto": {
@@ -42,6 +45,10 @@
       {
         "pagePath": "pages/exchange/exchange",
         "text": "兑换"
+      },
+      {
+        "pagePath": "pages/cat/cat",
+        "text": "购物车"
       }
     ]
   },

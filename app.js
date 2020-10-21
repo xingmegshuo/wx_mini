@@ -14,6 +14,7 @@ App({
         const data = { 'name': 'ml', 'code': res.code }
         var that = this
         util.send_request('api/wx_login', data, '', 'POST', function(userInfo){
+          console.log(userInfo.jwt)
           if (userInfo.error){
             console.log(userInfo)
           }else{

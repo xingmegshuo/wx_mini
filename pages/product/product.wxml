@@ -1,0 +1,27 @@
+<!--pages/product/product.wxml-->
+<view class="deatil">
+  <view class="swiper-container">
+  <swiper indicator-dots="true"  duration="800" circular="true" current="{{index}}" bindchange="swiperChange" class="swiper">
+    <block wx:for="{{productImg}}" wx:key="unique">
+      <swiper-item>
+        <image class="img" src="{{item}}"   />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+  <view class="name">{{product.name}}</view>
+  <view>
+    <view class="price" wx:if="{{product.property==0}}"><image src="../../image/r.jpg"></image>{{product.price}}</view>
+    <view class="price" wx:else><image src="../../image/r.jpg"></image>{{product.price}}/<image src="../../image/m.jpg"></image>{{product.virtual}}</view>
+    <view class="sail">卖出: {{product.sail}}</view>
+  </view>
+  <view class="bu">
+    数量
+    <p data-num="{{num}}" bindtap="remove">-</p>
+    {{num}}
+    <p data-num="{{num}}" bindtap="add">+</p>
+    (库存: {{product.quantity}})
+  </view>
+  <button data-id="{{product.id}}" data-num="{{num}}" bindtap="addcat">添加购物车</button>
+</view>
