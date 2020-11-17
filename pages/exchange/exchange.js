@@ -25,7 +25,6 @@ Page({
       if (products.count != 0) {
         that.setData({
           product: products.results,
-
         })
       }
     })
@@ -107,28 +106,22 @@ Page({
   },
   new: function (e) {
     this.setData({
-      title: '新品推荐'
+      title: '新品来袭'
     })
   },
   discount: function (e) {
+    for (let i = 0;i<this.product.length;i++){
+      if (this.product[i]){
+        console.log(this.product[i])
+      }
+    }
     this.setData({
-      title: '最新折扣'
+      title: '活动折扣'
     })
   },
   meng: function (e) {
     this.setData({
-      title: '萌度兑换'
+      title: '精品推荐'
     })
   },
-  handleChange: function (e) {
-    let index = 1;
-    if (e.detail.current == this.data.product.length - 1) {
-      index = 0;
-    } else {
-      index = e.detail.current + 1
-    }
-    this.setData({
-      currentIndex: index,
-    });
-  }
 })

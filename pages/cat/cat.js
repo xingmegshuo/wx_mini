@@ -20,6 +20,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
+    util.send_request('api/address','',app.globalData.userInfo.jwt,'get',function(res){
+      console.log(res.info)
+      that.setData({
+        addressList:res.info
+      })
+    })
 
   },
 
@@ -90,24 +97,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-  // cb: function (e) {
-  //   let which = e.detail.value
-  //   for (let i = 0; i < which.length; i++) {
-  //     if (this.data.cat[i].checked == '') {
-  //       this.data.cat[i].checked = true
-  //     }
-  //   }
 
-  //   if (which.length == this.data.cat.length) {
-  //     this.data.checkAll = true
-  //   } else {
-  //     this.data.checkAll = ''
-  //   }
-  //   this.setData({
-  //     cat: this.data.cat,
-  //     checkAll: this.data.checkAll
-  //   })
-  // },
   get_all: function (e) {
     var that = this
     let status = e.currentTarget.dataset.check
@@ -127,6 +117,7 @@ Page({
       checkAll: that.data.checkAll
     })
   },
+
   choose:function(e){
     let status = e.currentTarget.dataset.check
     let num = 0
@@ -154,7 +145,13 @@ Page({
       checkAll: this.data.checkAll
     })
   },
+
   payment:function(e){
+    console.log(this.data.dialogShow)
+    this.setData({
+      dialogShow: true
+    })
+    console.log(this.data.dialogShow)
     let catId = []
     for (let i = 0; i<this.data.cat.length; i++){
       if (this.data.cat[i].checked==true){
@@ -172,10 +169,10 @@ Page({
       }
       that.setData({
         cat: res.info,
-        dialogShow: true
       })
     })
     let data={'catId':catId,'remark':'多放辣椒'}
+
     // util.send_request('api/order',data,app.globalData.userInfo.jwt,'POST',function(res){
     //   console.log(res)
     // })
@@ -204,5 +201,11 @@ Page({
     wx.showToast({
       title: '删除成功',
     })
-  }
+  },
+
+  tapDialogButton(e) {
+    this.setData({
+        dialogShow: false,
+    })
+},
 })

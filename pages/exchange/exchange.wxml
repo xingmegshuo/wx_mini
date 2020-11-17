@@ -1,42 +1,92 @@
-<!--pages/exchange/exchange.wxml-->
-<image class="header-bg" src="../../image/exbg.jpg"></image>
-
-<view class="mall" wx:if='{{product.length==0 }}'>抱歉，暂无更多信息</view>
-<!-- <view class="mall" wx:else>
-	<view class="first">
-		<image src="https://www.menguoli.com/{{product_1.productImg}}" data-id="{{product_1.id}}" bindtap="product"></image>
-		<text>{{product_1.name}}</text>
+<view class="top">
+	<view class="top-view">
+		<image src="../../image/car.png"></image>
+		<view class="top-text">购物车</view>
 	</view>
-	<view class="second">
-		<image src="https://www.menguoli.com/{{product_2.productImg}}" data-id="{{product_2.id}}" bindtap="product"></image>
-		<text>{{product_2.name}}</text>
-	</view>
-	<view class="third">
-		<image src="https://www.menguoli.com/{{product_3.productImg}}" data-id="{{product_3.id}}" bindtap="product"></image>
-		<text>{{product_3.name}}</text>
-	</view>
-</view> -->
+</view>
+<view class="hr"></view>
 <view class="mall">
-	<swiper class="imageContainer" bindchange="handleChange" display-multiple-items="3" interval="100000000000"
+	<view class="products" wx:if='{{product.length==0 }}'>抱歉，暂无更多信息</view>
+	<view class="products" wx:else>
+		<view class="title">~{{title}}~</view>
 
-		current="{{_num}}" previous-margin="0px" next-margin="0px" circular autoplay>
-		<block wx:for="{{product}}" wx:key="{{index}}" class='bb'>
-			<swiper-item > 
-				<view class="product {{currentIndex == index ? 'active': ''}}">
-				<image data-id="{{item.id}}" bindtap="product" id="{{index}}" 
-					src="https://www.menguoli.com/{{item.productImg}}"></image>
-				<text class="itemtext">{{item.name}}</text>
+		<view wx:for="{{product}}" wx:key="{{index}}" class='product'  data-id="{{item.id}}" bindtap="product">
+			<view class="product-image">
+				<image src="https://www.menguoli.com/{{item.productImg}}"></image>
 			</view>
+			<view class="product-info">
+				<view class="product-name">{{item.name}}</view>
+				<view class="product-price">¥ {{item.price}}</view>
+				<view class="product-add"><image src="../../image/add.png"></image></view>
+			</view>
+		</view>
+	</view>
+	<!-- <swiper class="imageContainer" bindchange="handleChange" display-multiple-items="3" interval="100000000000" current="{{_num}}" previous-margin="0px" next-margin="0px" circular autoplay>
+		<block '>
+			<swiper-item>
+				<view class="product {{currentIndex == index ? 'active': ''}}">
+					<image data-id="{{item.id}}" bindtap="product" id="{{index}}" src="https://www.menguoli.com/{{item.productImg}}"></image>
+					<text>{{item.name}}</text>
+				</view>
 			</swiper-item>
-	</block>
-	</swiper>
+		</block>
+	</swiper> -->
 </view>
 
 
 <view class="nav">
-	<view bindtap="all">总览</view>
-	<view bindtap="new">新品</view>
-	<view bindtap="discount">折扣</view>
-	<view bindtap="meng">萌度</view>
+	<view class="nav-item" bindtap="all" wx:if='{{title=="商品总览" }}' style="color:#a5d2ff">
+		<view class="nav-image">
+			<image src="../../image/all.png"></image>
+		</view>
+		<view class="nav-text">总览</view>
+	</view>
+	<view class="nav-item" bindtap="all" wx:else>
+		<view class="nav-image">
+			<image src="../../image/all.png"></image>
+		</view>
+		<view class="nav-text">总览</view>
+	</view>
+	<view class="nav-item" bindtap="new" wx:if='{{title=="新品来袭" }}' style="color:#a5d2ff">
+		<view class="nav-image">
+			<image src="../../image/new.png"></image>
+		</view>
+		<view class="nav-text">新品</view>
+
+	</view>
+	<view class="nav-item" bindtap="new" wx:else>
+		<view class="nav-image">
+			<image src="../../image/new.png"></image>
+		</view>
+		<view class="nav-text">新品</view>
+
+	</view>
+	<view class="nav-item" bindtap="discount" wx:if='{{title=="活动折扣" }}' style="color:#a5d2ff">
+		<view class="nav-image">
+			<image src="../../image/discount.png"></image>
+		</view>
+		<view class="nav-text">折扣</view>
+
+	</view>
+	<view class="nav-item" bindtap="discount" wx:else>
+		<view class="nav-image">
+			<image src="../../image/discount.png"></image>
+		</view>
+		<view class="nav-text">折扣</view>
+
+	</view>
+	<view class="nav-item" bindtap="meng" wx:if='{{title=="精品推荐" }}' style="color:#a5d2ff">
+		<view class="nav-image">
+			<image src="../../image/mm.png"></image>
+		</view>
+		<view class="nav-text">推荐</view>
+
+	</view>
+	<view class="nav-item" bindtap="meng" wx:else>
+		<view class="nav-image">
+			<image src="../../image/mm.png"></image>
+		</view>
+		<view class="nav-text">推荐</view>
+
+	</view>
 </view>
-<view class="title">{{title}}</view>

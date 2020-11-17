@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "mp-dialog": "/miniprogram_npm/weui-miniprogram/half-screen-dialog/half-screen-dialog"
+  },
   "navigationBarTitleText": "萌果果-我的购物车"
 }
+

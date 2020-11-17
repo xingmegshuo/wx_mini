@@ -1,5 +1,4 @@
-<!--pages/cat/cat.wxml-->
-<!-- <image class="header-bg" src="../../image/mall.png"></image> -->
+
 <view class="header">
 	<view>
 		<checkbox data-check="{{checkAll}}" bindtap="get_all" checked="{{checkAll}}" />全选
@@ -25,6 +24,6 @@
 <button bindtap="payment" class="ok" size="mini">结算</button>
 <button bindtap="delete" class="delete" size="mini">删除</button>
 <view class='placeholder-view'></view>
-<mp-dialog title="test" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
-        <view>test content</view>
+<mp-dialog title="订单信息" show="{{dialogShow}}"   bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+<input placeholder="输入订单备注"></input>
 </mp-dialog>

@@ -26,7 +26,8 @@ Page({
     util.send_request('data/product/' + id, '', app.globalData.userInfo.jwt, 'get', function (res) {
       img.push(main_str + res.productImg)
       that.setData({
-        product: res
+        product: res,
+        productImg: img
       })
     })
     util.send_request('api/product', data, app.globalData.userInfo.jwt, 'get', function (res) {
@@ -38,7 +39,6 @@ Page({
       })
 
     })
-
   },
 
   /**

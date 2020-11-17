@@ -1,174 +1,147 @@
 /* pages/exchange/exchange.wxss */
 
 
-page {
-  height: 100%;
-}
-
-.header-bg {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background-size: 100% 100%;
-  z-index: -1;
-
-}
-
-.mall {
-  position: relative;
-  top: 60%;
-  height: 40%;
-}
-
-.first {
-  position: absolute;
-  margin-top: 10%;
-  left: 5%;
-  width: 35%;
-  height: 70%;
-  border-style: solid;
-  box-shadow: 0px 2px 4px 2px goldenrod;
-  border-width: 0rpx;
-  z-index: 1;
-}
-
-.second {
-  position: absolute;
-  left: 37%;
-  width: 45%;
-  height: 72%;
-  margin-left: -40px;
-  border-style: solid;
-  box-shadow: 0px 2px 4px 2px goldenrod;
-  border-width: 0rpx;
-  z-index: 999;
-}
-
-.third {
-  left: 60%;
-  position: absolute;
-  margin-top: 10%;
-  width: 35%;
-  height: 70%;
-  border-style: solid;
-  box-shadow: 0px 2px 4px 2px goldenrod;
-  border-width: 0rpx;
-  z-index: 1;
-}
-
-/* .mall image{
-  width: 100%;
-  height: 70%;
-}
-.mall text{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  height: 15%;
-} */
-.placeholder-view {
-  width: 100%;
+.top{
   height: 100rpx;
 }
-
-.nav {
-  width: 30%;
-  margin-top: -58%;
-  margin-right: 2%;
-  float: right;
-  z-index: 5;
-  background-color: #a3adf4;
-  border-left: solid black 0.5px;
-  border-right: solid black 0.5px;
-  border-top: solid black 0.2px;
+.top-view{
+  width: 200rpx;
+  height: 90rpx;
+  margin-left: 50rpx;
+  border-radius: 20rpx;
+  border-style: solid;
+  border-width: 1rpx;
+  border-color: #808080;
+  display: -webkit-box;
 }
-
-.nav view {
-  height: 40px;
-  border-bottom: solid black 0.2px;
+.top image{
+  margin-top: 5rpx;
+  margin-left: 10rpx;
+  height: 80rpx;
+  width: 80rpx;
+}
+.top-text{
+  height: 90rpx;
+  width: 100rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+
+}
+.hr{
+  height: 2rpx;
+  background-color:#333333 ;
 }
 
+
+
+.mall {
+  position:absolute;
+  top:105rpx;
+  left: 150rpx;
+  height:80%;
+  width: 78%;
+}
+.products {
+  width: 95%;
+  height: 95%;
+  margin: 2.5% auto;
+  overflow: scroll;
+}
 .title {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 22%;
-  font-size: 20px;
-  z-index: 5;
-  margin-left: 2%;
-  background-color: white;
+  font-weight: bolder;
 }
-.imageContainer {
-  width: 96%;
-  height: 90%;
-  margin: 2%;
+.product{
+  width: 95%;
+  height: 200rpx;
+  margin: auto;
+  border-radius: 16rpx;
+  border-style: solid;
+  border-color: #808080;
+  margin-top: 20rpx;
+  display: -webkit-box;
+  box-shadow: 10rpx 10rpx 5rpx #888888;
 }
-.swiper-item {
-  text-align: center;	
-}
-
-.product {
-  width: 96%;
-  position: absolute;
-  height: 70%;
-  border:1px solid gold;
-  margin-top: 20%;
-}
-.active {
-  width: 96%;
-  position: absolute;
-  height: 70%;
-  border:1px solid gold;
-  margin-top: 0;
-  z-index: 100;
-
-}
-
-.product image{
-  width: 100%;
+.product-image{
+  width: 50%;
   height: 80%;
+  margin-top: 20rpx;
+  margin-left:10%;
 }
-.product text {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  width: 100%;
-  margin-top: -4%;
-  height: 20%;
-}
-/* .item image{
-  position: absolute;
-  margin: 2%;
+.product-image image{
   width: 100%;
   height: 100%;
-  height: 60%;
-  margin-top: 20%;
-  border-radius: 15rpx;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+.product-info{
+  margin-top: 20rpx;
+  width: 35%;
+}
+.product-name {
+  text-align: right;
+}
+.product-price{
+  text-align: right;
+  font-size: 24rpx;
+  color: #ff0000;
+}
+.product-add{
+  text-align: right;
+  margin-top: 10rpx;
+}
+.product-add image{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+
+.nav {
+  width: 140rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 102rpx;
   z-index: 5;
 }
 
-.active image {
-  position: absolute;
-  z-index: 10;
-  width: 140%;
-  height: 60%;
-  margin-top: 0px;
-  transition: all .4s ease-in-out 0s;
+.nav-item{
+  height: 140rpx;
+  border-width: 1rpx;
+  border-style: solid;
+  border-color: #808080;
+  color: #bcbcbc;
 }
-
-.active text {
-  width: 100%;
-  position: absolute;
+.nav-image{
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border-width: 1rpx;
+  border-style: solid;
+  border-color: #808080;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  top:60%
+}
+.nav-image image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.nav-text{
+  height: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-weight: bolder;
+}
 
-} */
+
+

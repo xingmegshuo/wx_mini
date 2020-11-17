@@ -1,25 +1,20 @@
 /* pages/detial/detial.wxss */
 
 
-page {
-  height: 100%;
-}
-.header-bg {
+
+.hr{
+  height: 2px;
   width: 100%;
-  height: 100%;
-  position: fixed;
-  background-size: 100% 100%;
-  z-index: -1;
-  margin-top: -3%;
+  background-color:blueviolet;
 }
 .main {
-  width: 94%;
+  width: 96%;
   height: 100%;
   margin: 3%;
   /* padding: 3%; */
-  border-style: solid;
+  /* border-style: solid;
   box-shadow:0px 2px 4px 2px black;
-  border-width: 0rpx;
+  border-width: 0rpx; */
   z-index: 1;
 }
 
@@ -27,27 +22,22 @@ page {
   display: flex;
   padding-top: 40rpx;
   z-index: 1;
-  font-size: 24px;
+  font-size: 28rpx;
   font-weight: bolder;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   margin-bottom: 30rpx;
 }
-.desc {
-  margin-left: 20rpx;
-  text-indent: 20rpx;
-  text-align: left;
-}
+
 .time {
-  display: flex;
   padding-top: 20rpx;
-  align-items: center;
-  justify-content: center;
+  padding-left: 40rpx;
+  align-items: left;
+  justify-content: left;
   margin-bottom: 20rpx;
+  font-size: 20rpx;
 }
-.time text {
-  font-weight: bolder;
-}
+
 
 .img {
   padding-top: 20rpx;
@@ -57,7 +47,9 @@ page {
   margin-bottom: 20rpx;
 }
 .content {
-  margin-left: 20rpx;
-  text-indent: 20rpx;
+  width: 90%;
+  margin: auto;
+  word-wrap:break-word;
+  word-break:normal; 
   text-align: left;
 }
