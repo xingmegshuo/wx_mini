@@ -1,11 +1,11 @@
 /* pages/detial/detial.wxss */
-
+@import "/pages/detial/wxParse/wxParse.wxss";
 
 
 .hr{
-  height: 2px;
+  height: 2rpx;
   width: 100%;
-  background-color:blueviolet;
+  background-color:#e4e4e4;
 }
 .main {
   width: 96%;
@@ -22,16 +22,17 @@
   display: flex;
   padding-top: 40rpx;
   z-index: 1;
-  font-size: 28rpx;
+  font-size: 36rpx;
   font-weight: bolder;
   align-items: left;
   justify-content: left;
   margin-bottom: 30rpx;
+  padding-left: 40rpx;
 }
 
 .time {
-  padding-top: 20rpx;
   padding-left: 40rpx;
+  padding-top: 20rpx;
   align-items: left;
   justify-content: left;
   margin-bottom: 20rpx;
@@ -40,14 +41,20 @@
 
 
 .img {
-  padding-top: 20rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20rpx;
+  margin:40rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.img image{
+  width: 100%;
 }
 .content {
-  width: 90%;
+  padding-left:40rpx;
+  width: 100%;
+  padding-top: 40rpx;
   margin: auto;
   word-wrap:break-word;
   word-break:normal; 

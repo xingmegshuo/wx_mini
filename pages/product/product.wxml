@@ -1,27 +1,30 @@
 <!--pages/product/product.wxml-->
 <view class="deatil">
   <view class="swiper-container">
-  <swiper indicator-dots="true"  duration="800" circular="true" current="{{index}}" bindchange="swiperChange" class="swiper">
-    <block wx:for="{{productImg}}" wx:key="unique">
-      <swiper-item>
-        <image class="img" src="{{item}}"   />
-      </swiper-item>
-    </block>
-  </swiper>
-</view>
+    <swiper indicator-dots="true" duration="800" circular="true" current="{{index}}" bindchange="swiperChange"
+      class="swiper">
+      <block wx:for="{{productImg}}" wx:key="unique">
+        <swiper-item>
+          <image class="img" src="{{item}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
 
   <view class="name">{{product.name}}</view>
-  <view>
-    <view class="price" wx:if="{{product.property==0}}"><image src="../../image/r.jpg"></image>{{product.price}}</view>
-    <view class="price" wx:else>¥ {{product.price}}</view>
-    <view class="sail">已售: {{product.sail}}</view>
-  </view>
+  <view class="price" wx:if="{{product.property==0}}">价格: ¥ {{product.price}}</view>
+  <view class="price" wx:else>价格: ¥ {{product.price}}</view>
+  <view class="sail">已售: {{product.sail}}个</view>
+  <view class="all"> 总量: {{product.quantity}}个</view>
   <view class="bu">
-    数量
-    <p data-num="{{num}}" bindtap="remove">-</p>
-    {{num}}
-    <p data-num="{{num}}" bindtap="add">+</p>
-    (库存: {{product.quantity}})
+    <view class="title">
+      数量:
+    </view>
+    <view class="btn">
+      <view data-num="{{num}}" class="nav" bindtap="remove"><image src="../../image/remove_num.jpg"></image></view>
+      <view class="nav-text">{{num}}个</view>
+      <view data-num="{{num}}" class="nav" bindtap="add"><image src="../../image/add_num.jpg"></image></view>
+    </view>
   </view>
   <view class="button" data-id="{{product.id}}" data-num="{{num}}" bindtap="addcat">添加购物车</view>
 </view>

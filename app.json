@@ -10,7 +10,8 @@
     "pages/cat/cat",
     "pages/address/address",
     "pages/product/product",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/order_deatil/order_deatil"
   ],
   "plugins": {
     "crypto": {
@@ -20,7 +21,7 @@
   },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#ed7176",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
@@ -35,10 +36,6 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/game/game",
-        "text": "游戏"
-      },
-      {
         "pagePath": "pages/my/my",
         "text": "我的"
       },
@@ -47,15 +44,14 @@
         "text": "兑换"
       },
       {
-        "pagePath": "pages/cat/cat",
+        "pagePath": "pages/game/game",
         "text": "购物车"
       }
     ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-    "useExtendedLib": {
-      "weui": true
-    }
-  
+  "useExtendedLib": {
+    "weui": true
+  }
 }

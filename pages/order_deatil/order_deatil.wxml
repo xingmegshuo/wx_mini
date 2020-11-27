@@ -1,0 +1,25 @@
+<view class="main">
+  <view class="number">订单号: {{order.number}}</view>
+  <view class="time">订单时间: {{order.time}}</view>
+  <view class="title">商品详情</view>
+  <view class="nav">
+    <view>商品</view>
+    <view>价格</view>
+    <view>数量</view>
+    <view>说明</view>
+    <view>合计</view>
+  </view>
+  <view class="products">
+    <view class="product" wx:for="{{order.car}}">
+      <view class="name">
+        <image src="https://www.menguoli.com/{{item.img}}"></image>
+        <view>{{item.product}}</view>
+      </view>
+      <view class="info">¥ {{item.price}}</view>
+      <view class="info">{{item.num}}</view>
+      <view class="info">暂无</view>
+      <view class="info">¥:{{item.price*item.num}}</view>
+    </view>
+    <view class="bottome">总价:      ¥:{{order.money}}</view>
+  </view>
+</view>

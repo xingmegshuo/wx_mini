@@ -9,6 +9,7 @@ Page({
    */
   data: {
     active: {},
+    top: {},
     userInfo: {}
   },
 
@@ -29,17 +30,29 @@ Page({
     // }
     // console.log(jwt)
 
+    wx.showLoading({
+      title: "正在加载",
+    })
 
     var jwt = app.globalData.userInfo.jwt
     var that = this
     util.send_request('data/activity', '', jwt, 'GET', function (active) {
-      // console.log(active)
-      if(active.count!=0){
+      if (active.count != 0) {
+        let top_list = []
+        for (var i = 0; i < active.count; i++) {
+          if (active.results[i].description == true) {
+            top_list.push(active.results[i])
+          }
+        }
         that.setData({
-          active: active.results
+          active: active.results,
+          top: top_list
         })
       }
+      wx.hideLoading()
     })
+
+
   },
 
   /**
@@ -96,9 +109,10 @@ Page({
 
   },
   look_detial: function (event) {
-    const id=event.currentTarget.dataset.id
+    const id = event.currentTarget.dataset.id
     wx.navigateTo({
-      url: '../detial/detial?id='+id,
+      url: '../detial/detial?id=' + id,
+      // url:'../auth/index'
     })
 
   }

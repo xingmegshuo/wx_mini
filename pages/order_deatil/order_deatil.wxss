@@ -1,0 +1,78 @@
+/* pages/order_deatil/order_deatil.wxss */
+.main{
+  margin:40rpx;
+  height:80%;
+  border-radius: 10rpx;
+  border:solid 2rpx #e4e4e4;
+  background-color: white;
+}
+.number{
+  margin-top: 50rpx;
+  margin-left: 50rpx;
+  font-size: 28rpx;
+}
+.products{
+  margin-bottom: 50rpx;
+  margin-left: 20rpx;
+  height: 100%;
+  overflow: scroll;
+}
+.bottome{
+  margin-top: 50rpx;
+  margin-left: 20rpx;
+  color: #700600;
+}
+.time{
+  margin-left: 50rpx;
+  margin-top:20rpx;
+  font-size: 28rpx;
+}
+.title{
+  margin-left: 50rpx;
+  margin-top:20rpx;
+  width: 140rpx;
+  height: 50rpx;
+  line-height:50rpx;
+  text-align: center;
+  font-size: 24rpx;
+  border:solid 2rpx #e4e4e4;
+  border-radius: 10rpx;
+  color:#700600;
+}
+.nav{
+  display: -webkit-box;
+  width: 100%;
+  margin-top: 50rpx;
+}
+.nav view{
+  font-size: 24rpx;
+  text-align: center;
+  width: 20%;
+}
+.product{
+  display: -webkit-box;
+  margin-top: 40rpx;
+}
+
+.product image{
+  width: 100%;
+  height: 80rpx;
+}
+.name{
+  width: 20%;
+  font-size: 24rpx;
+
+}
+.name view{
+  width: 100%;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+}
+.info{
+  width: 20%;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

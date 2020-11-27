@@ -1,7 +1,10 @@
 /**app.wxss**/
-page{
-  background-color: #f8f8f8;
+
+
+page {
+  background-color: #f6f6f6;
 }
+
 .container {
   height: 100%;
   display: flex;
@@ -10,5 +13,4 @@ page{
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
-
+}

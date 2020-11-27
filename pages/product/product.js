@@ -116,16 +116,25 @@ Page({
   },
   //点击图片触发事件
 
-  addcat:function(e){
-    console.log(e.currentTarget.dataset)
-    var data = {'productId':e.currentTarget.dataset.id, 'num': e.currentTarget.dataset.num}
-    console.log(data)
-    util.send_request('api/cat',data, app.globalData.userInfo.jwt,'post', function(res){
-      console.log(res)
-    })
-    wx.showToast({
-      title: '添加购物车成功',
-    })
-  }
+  addcat: function (e) {
+    var data = { 'productId': e.currentTarget.dataset.id, 'num': e.currentTarget.dataset.num }
+    if (this.data.product.quantity - this.data.product.sail < 1) {
+      wx.showToast({
+        title: '该商品已售空',
+        icon: 'none'
+      })
+    } if (e.currentTarget.dataset.num>this.data.product.quantity-this.data.product.sail) {
+      wx.showToast({
+        title: '数量大于库存',
+        icon:'none'
+      })
 
+    } else {
+      util.send_request('api/cat', data, app.globalData.userInfo.jwt, 'post', function (res) {
+        wx.showToast({
+          title: '添加购物车成功',
+        })
+      })
+    }
+  }
 })

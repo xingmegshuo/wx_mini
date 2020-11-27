@@ -1,5 +1,2 @@
 <!--logs.wxml-->
-<view class="container log-list">
-	<image class="header-bg" src="../../image/background.png"></image>
-
-</view>
+<image class="header-bg" src="../../image/background.png"></image>

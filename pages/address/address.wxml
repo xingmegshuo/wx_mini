@@ -1,6 +1,50 @@
 <!--pages/address/address.wxml-->
-<scroll-view class="scroll" scroll-y="true">
-  <view wx:for="{{addressList}}">
+
+<view class="main">
+  <view class="title">
+    <view class="title-image">
+      <image src="../../image/address_logo.png"></image>
+    </view>
+    <view class="text">默认地址</view>
+  </view>
+  <view class="default" wx:for="{{addressList}}"  wx:if="{{item.is_default==true}}">
+    <view style="width:80%">
+      <view class="item-top">
+        <view>{{item.human}}</view>
+        <view>{{item.phone}}</view>
+      </view>
+      <view class="item-address">
+        {{item.address}}
+      </view>
+    </view>
+    <view class="item-delete" data-id="{{item.id}}" bindtap="delAddress" >删除</view>
+  </view>
+
+  <view class='nav'>
+    <view class="title-image">
+      <image src="../../image/my_address.png"></image>
+    </view>
+    <view class="text">我的地址</view>
+    <view class="add_address" bindtap="addAddress">新增地址</view>
+  </view>
+  <view class="item" wx:for="{{addressList}}" wx:if="{{item.is_default==false}}">
+    <view style="width:80%">
+      <view class="item-top">
+        <view>{{item.human}}</view>
+        <view>{{item.phone}}</view>
+      </view>
+      <view class="item-address">
+        {{item.address}}
+      </view>
+    </view>
+    <view   class="item-delete"  >
+      <view class="update" data-id="{{item.id}}" bindtap="default_address" ><image src="../../image/defalut.jpg"></image></view>
+      <view class="delete" data-id="{{item.id}}" bindtap="delAddress">删除</view>
+    </view>
+  </view>
+</view>
+<!-- <scroll-view class="scroll" scroll-y="true">
+  <view >
     <view class="product-name-wrap">
       <view class="ui-list-item-info">{{item.human}}
         <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text> {{item.phone}}
@@ -15,4 +59,4 @@
 </scroll-view>
 <view class="add-address" bindtap="addAddress">
   <image class="add-img"  src="../../image/address.jpg"></image>新增地址
-</view>
+</view> -->

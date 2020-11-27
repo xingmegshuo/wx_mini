@@ -1,0 +1,7 @@
+var sum = function(arg,arg2){
+  return (arg*arg2).toFixed(2)
+}
+
+module.exports={
+  sum:sum
+}

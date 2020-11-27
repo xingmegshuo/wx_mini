@@ -21,30 +21,37 @@ Page({
     }
   },
   getUserInfo: function (e) {
-    wx.getUserInfo({
-      success: res => {
-
-        var data = { 'name': 'ml', 'session_key': app.globalData.userInfo.user.session_key, 'openid': app.globalData.userInfo.user.openid, 'iv': res.iv, 'encrypteData': res.encryptedData }
-        console.log(data)
-        console.log(app.globalData.userInfo.jwt)
-        util.send_request('api/wx_auth', data, app.globalData.userInfo.jwt, 'POST', function (userinfo) {
-          // console.log(userinfo)
-          that.setData({
-            userInfo: userinfo.user,
-            hasUserInfo: true
+    var that = this
+    wx.showModal({
+      title: '给萌果果授权',
+      cancelColor: 'cancelColor',
+      content: '获取您的用户信息!',
+      complete: function (res) {
+        if (res.confirm == true) {
+          wx.showLoading({
+            title: "正在授权",
           })
-          that.userInfo = userinfo.user
-        })
+          wx.getUserInfo({
+            success: res => {
+              var data = { 'name': 'ml', 'session_key': app.globalData.userInfo.user.session_key, 'openid': app.globalData.userInfo.user.openid, 'iv': res.iv, 'encrypteData': res.encryptedData }
+              util.send_request('api/wx_auth', data, app.globalData.userInfo.jwt, 'POST', function (userinfo) {
+                // console.log(userinfo)
+                that.setData({
+                  userInfo: userinfo.user,
+                  hasUserInfo: true
+                })
+                getApp().globalData.userInfo.user = that.data.userInfo
+                getApp().globalData.auth = 'true'
+                wx.switchTab({
+                  url: '../my/my',
+                })
+                wx.hideLoading()
+              })
+            }
+          })
+        }
       }
     })
-    setTimeout(update => {
-      getApp().globalData.userInfo.user = this.data.userInfo
-      getApp().globalData.auth = 'true'
-      wx.switchTab({
-        url: '../my/my',
-      })
-    }, 500)
-
   },
 
 })

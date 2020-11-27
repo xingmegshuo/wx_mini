@@ -1,6 +1,7 @@
 // pages/detial/detial.js
 const util = require('../../utils/util.js')
 const app = getApp()
+var WxParse = require('./wxParse/wxParse.js')
 Page({
 
   /**
@@ -20,6 +21,7 @@ Page({
       that.setData({
         active:active
       })
+      WxParse.wxParse('article','html',active.content,that,5)
     })
     
   },

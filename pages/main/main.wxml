@@ -1,8 +1,9 @@
 <!--pages/main/main.wxml-->
 <view class="header">
 	<!-- 活动页面 首页 -->
-	<view class="top" wx:key="index" wx:for="{{active}}" data-id="{{item.id}}">
-		<view class="top-item">
+	<view class="top">
+		<image class="top-black" src="../../image/main_background.png"></image>
+		<view class="top-item"  wx:key="index" wx:for="{{top}}">
 			<image class="top-image" src="{{item.img}}"></image>
 			<view class="top-title">{{item.title}}</view>
 		</view>

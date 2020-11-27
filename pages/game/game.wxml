@@ -1,24 +1,16 @@
 <!--pages/game/game.wxml-->
 <view class="game-center">
-	<image class="header-bg" src="../../image/auth.png"></image>
-	<view class="except" wx:if='{{games.length==0 }}'>
-		<text>抱歉，暂无更多信息</text>
-	</view>
-	<view wx:else class="games">
-		<view class="game" wx:key='index' wx:for='{{games}}' bindtap="openGame" data-id="{{item.app_id}}">
+	<view class="games">
+		<view class="game" wx:key='index' wx:for='{{games}}' bindtap="openGame" data-id="{{item.id}}">
 			<image src="{{item.img}}"></image>
-			<text>{{item.app_config.name}}</text>
+			<text wx:if="{{item.id==id}}"style="color:#700600">{{item.name}}</text>
+			<text wx:else>{{item.name}}</text>
 		</view>
 	</view>
-	<text class="text">其它内容</text>
-	<view class="games"  wx:if='{{orther.length==0 }}'>
-		<text>抱歉，暂无更多信息</text>
-	</view>
-	<view wx:else class="games" >
-		<view class="game" wx:key='index'  wx:for='{{orther}}' bindtap="openOrther" data-id="{{item.app_id}}">
-			<image src="{{item.img}}"></image>
-			<text>{{item.app_config.name}}</text>
-		</view>
+
+	<view class="content" >
+		<view class="content-title">{{title}}</view>
+		<text class="content-content">{{content}}</text>
 	</view>
 
 </view>

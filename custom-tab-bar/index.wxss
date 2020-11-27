@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   height: 48px;
-  background: white;
+  background:#ed7176;
   display: flex;
   padding-bottom: env(safe-area-inset-bottom);
 }
@@ -29,10 +29,11 @@
 }
 
 .tab-bar-item cover-image {
-  width: 27px;
-  height: 27px;
+  width: 24px;
+  height: 24px;
 }
 
 .tab-bar-item cover-view {
-  font-size: 10px;
+  font-size: 12px;
+  color:white;
 }

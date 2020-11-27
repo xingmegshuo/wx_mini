@@ -21,6 +21,7 @@ Page({
       that.setData({
         order: res.info
       })
+      app.globalData.order=res.info
     })
   },
 
@@ -87,6 +88,12 @@ Page({
     })
     wx.showToast({
       title: '删除成功',
+    })
+  },
+  deatil: function(e){
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../order_deatil/order_deatil?id='+id,
     })
   }
 })

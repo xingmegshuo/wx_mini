@@ -1,8 +1,5 @@
 /* pages/order/order.wxss */
-.page{
-  height: 100%;
-  width: 100%;
-}
+
 .title {
   margin:5%;
   display: flex;
@@ -12,29 +9,55 @@
 
 .order {
   margin:5%;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 .item{
   width: 100%;
-  margin-top: 10%;
+  margin-top: 40rpx;
+  border-radius: 10rpx;
+  border:solid 2rpx #e4e4e4;
+  display: -webkit-box;
+  box-shadow:0rpx 2rpx 2rpx 2rpx #b4b4b4;
+  background-color: white;
+}
+.img{
+  margin:20rpx;
+  height: 120rpx;
+  width: 20%;
+}
+.img image{
+  width: 100%;
+  height: 100%;
+}
+.info{
+  width: 48%;
+  text-align: center;
+}
+.number{
+  font-size: 28rpx;
+  margin-top:20rpx
+}
+.money{
+  color:#f04c
+}
+.nav{
+  width: 20%;
+  margin-left: 20rpx;
+}
+.nav view{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
 }
 .button{
-  margin: 2%;
-  background-color: green;
-  width: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  float: left;
+  margin: 5%;
+  border:solid 2rpx #e4e4e4;
+  color: #700600;
+  text-align: center;
 }
 .delete{
-  margin: 2%;
-  background-color:red;
-  width: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  float: right;
+  margin: 5%;
+  border:solid 2rpx #e4e4e4;
+  color: #700600;
+  text-align: center;
+
 }

@@ -34,13 +34,16 @@ Page({
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
-        selected: 4
+        selected: 3
       })
     }
     if (app.globalData.auth == 'false') {
-      wx.navigateTo({
-        url: '../auth/index',
+      wx.showToast({
+        title: '您没有授权',
       })
+      // wx.navigateTo({
+      //   url: '../auth/index',
+      // })
     } else {
       // console.log(app.globalData.userInfo)
       this.setData({
@@ -96,9 +99,21 @@ Page({
       url: '../address/address',
     })
   },
-  order:function(event){
+  order: function (event) {
     wx.navigateTo({
       url: '../order/order',
     })
+  },
+  auth: function () {
+    console.log(app.globalData.auth)
+    if (app.globalData.auth == 'false') {
+      wx.navigateTo({
+        url: '../auth/index',
+      })
+    } else {
+      wx.showToast({
+        title: '已经授权',
+      })
+    }
   }
 })

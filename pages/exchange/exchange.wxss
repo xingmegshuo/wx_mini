@@ -1,29 +1,32 @@
 /* pages/exchange/exchange.wxss */
-
+page{
+  background-color: white;
+}
 
 .top{
   height: 100rpx;
 }
 .top-view{
-  width: 200rpx;
-  height: 90rpx;
+  margin-top:25rpx;
+  width: 180rpx;
+  height: 70rpx;
   margin-left: 50rpx;
   border-radius: 20rpx;
   border-style: solid;
   border-width: 1rpx;
-  border-color: #808080;
+  border-color: #e4e4e4;
   display: -webkit-box;
 }
 .top image{
-  margin-top: 5rpx;
+  margin-top: 10rpx;
   margin-left: 10rpx;
-  height: 80rpx;
-  width: 80rpx;
+  height: 50rpx;
+  width: 50rpx;
 }
 .top-text{
-  height: 90rpx;
+  height: 70rpx;
   width: 100rpx;
-  line-height: 90rpx;
+  line-height: 70rpx;
   font-size: 26rpx;
   display: flex;
   align-items: center;
@@ -31,8 +34,8 @@
 
 }
 .hr{
-  height: 2rpx;
-  background-color:#333333 ;
+  height: 5rpx;
+  background-color:#e4e4e4 ;
 }
 
 
@@ -50,7 +53,11 @@
   margin: 2.5% auto;
   overflow: scroll;
 }
+.error{
+  margin: 50rpx;
+}
 .title {
+  margin-top: 20rpx;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,12 +67,11 @@
   width: 95%;
   height: 200rpx;
   margin: auto;
-  border-radius: 16rpx;
-  border-style: solid;
-  border-color: #808080;
+  border-radius: 10rpx;
   margin-top: 20rpx;
   display: -webkit-box;
-  box-shadow: 10rpx 10rpx 5rpx #888888;
+  box-shadow:0rpx 2rpx 2rpx 2rpx #b4b4b4;
+  background-color: white;
 }
 .product-image{
   width: 50%;
@@ -103,28 +109,30 @@
 
 .nav {
   width: 140rpx;
+  height: 85%;
   position: absolute;
   left: 0rpx;
-  top: 102rpx;
+  top: 126rpx;
   z-index: 5;
+  background-color:#f6f6f6;
+  /* box-shadow:0rpx 2rpx 2rpx 2rpx #b4b4b4; */
 }
 
 .nav-item{
-  height: 140rpx;
-  border-width: 1rpx;
+  height: 110rpx;
+  padding-top: 10rpx;
+  /* border-width: 1rpx;
   border-style: solid;
-  border-color: #808080;
-  color: #bcbcbc;
+  border-color: #808080; */
 }
 .nav-image{
-  margin-left: 20rpx;
-  margin-top: 10rpx;
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50%;
+  margin-left: 30rpx;
+  width: 80rpx;
+  height: 80rpx;
+  /* border-radius: 50%;
   border-width: 1rpx;
   border-style: solid;
-  border-color: #808080;
+  border-color: #808080; */
   overflow: hidden;
   display: flex;
   align-items: center;

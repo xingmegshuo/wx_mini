@@ -1,8 +1,6 @@
 /* index.wxss */
 
-page {
-  height: 100%;
-}
+
 
 .header-bg {
   width: 100%;
@@ -34,6 +32,9 @@ page {
 }
 
 .usermotto {
-  padding-top: 200px;
+  padding: 200rpx 0rpx ;
+  font-size: 36rpx;
+  width: 100%;
+  text-align: center;
   z-index: 1;
 } 

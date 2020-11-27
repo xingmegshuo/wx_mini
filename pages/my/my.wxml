@@ -1,9 +1,35 @@
 <!--pages/my/my.wxml-->
 <view class="main">
-	<image class="header-bg" src="../../image/my.png"></image>
-  <image class="userinfo-avatar" src='{{userinfo.user.avatar_url}}' ></image>
-  <view class='userinfo-name'>{{userinfo.user.nick_name}}</view> 
-  <view class='userinfo-mes'>
+  <view class="user" bindtap="auth">
+    <view class="userinfo-avatar">
+      <image src='{{userinfo.user.avatar_url}}'></image>
+    </view>
+    <view class='userinfo-name' wx:if="{{userinfo.user.nick_name}}" >{{userinfo.user.nick_name}}</view>
+    <view class="userinfo-name" wx:else>请点击此处授权</view>
+  </view>
+  <view class="address" bindtap="address">
+    <view class="logo">
+      <image src="../../image/address_logo.png"></image>
+    </view>
+    <view class="text">
+      地址管理
+    </view>
+    <view class="orther">
+      >>
+    </view>
+  </view>
+  <view class="address" bindtap="order">
+    <view class="logo">
+      <image src="../../image/order_logo.png"></image>
+    </view>
+    <view class="text">
+      我的订单
+    </view>
+    <view class="orther">
+      >>
+    </view>
+  </view>
+  <!-- <view class='userinfo-mes'>
     <view class='a-item'>
       <image class="icon" src="../../image/meng.png"></image>
       <view class='my'>
@@ -28,6 +54,6 @@
   </view>
   <view class="btn" bindtap="activate">消息通知设置</view>
   <view class="btn" bindtap="address">收货地址管理</view>
-  <view class="btn" bindtap="order">订单历史记录</view>
+  <view class="btn" bindtap="order">订单历史记录</view> -->
 
 </view>

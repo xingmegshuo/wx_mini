@@ -11,17 +11,26 @@ page {
 }
 .top{
   height: 300rpx;
-  margin: 20rpx 20rpx;
+  margin: 20rpx 40rpx;
   overflow:auto;
+  display: -webkit-box;
+}
+.top-black{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 280rpx;
+  z-index: -1;
 }
 .top-item{
-  height: 300rpx;
+  height: 290rpx;
   width: 400rpx;
-  background-color: #a3ddff;
-  border-radius: 8rpx;
+  background-color: #ff804c;
+  border-radius: 10rpx;
   overflow: hidden;
   margin-right: 40rpx;
-  float: left;
+  border: solid 2rpx #993333;
 }
 .top-image{
   width: 400rpx;
@@ -31,26 +40,27 @@ page {
   height: 60rpx;
   font-size: 24rpx;
   color: white;
+  text-align: center;
   font-weight: border;
   padding:0 10rpx;
 }
 .active {
+  background-color: white;
   margin-top: 50rpx;
   height: 200rpx;
-  width: 100%;
-  border-radius: 78rpx;
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 10rpx;
   overflow: hidden;
   /* background-color:red; */
   display: -webkit-box;
-  border-color: #808080;
-  border-style: solid;
-  border-width: 1rpx;
-  box-shadow: 10rpx 10rpx 5rpx #888888;
+  box-shadow:0rpx 2rpx 2rpx 2rpx #b4b4b4;
 }
 .active-img {
-  margin-left: 80rpx;
-  margin-top: 20rpx;
-  height: 160rpx;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  height: 140rpx;
+  margin-bottom: 30rpx;
   width: 260rpx;
   border-radius: 8rpx;
 }
@@ -61,12 +71,12 @@ page {
 .active-orther{
   margin-left: 20rpx;
   margin-top: 20rpx;
-  width: 300rpx;
+  width: 330rpx;
   height: 160rpx;
 }
 .active-title {
   height: 140rpx;
-  font-size: 24rpx;
+  font-size: 30rpx;
   font-weight: bolder;
 }
 .active-time {

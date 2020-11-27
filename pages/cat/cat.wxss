@@ -1,68 +1,240 @@
 /* pages/cat/cat.wxss */
 
-page {
-  height: 90%;
+.address{
+  width: 95%;
+  height: 200rpx;
+  margin: 20rpx auto;
+  border-radius: 16rpx;
+  border-style: solid;
+  border-width:2rpx ;
+  border-color:#e4e4e4;
+  background-color: white;
 }
-
-.header-bg {
+.address-top{
+  height: 100rpx;
+  margin: 10rpx;
+  display: -webkit-box;
+}
+.address-top image{
+  height: 80rpx;
+  width: 80rpx;
+  margin: 10rpx;
+}
+.address-top view{
+  margin-left: 50rpx;
+  line-height: 100rpx;
+  font-size: 36rpx;
+}
+.address-bottom {
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.address-img{
+  position: absolute;
+  top:80rpx;
+  right: 50rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.address-img image{
+  height: 80rpx;
+  width: 80rpx;
+}
+.nav{
+  position: absolute;
+  bottom: 90rpx;
+  height: 100rpx;
   width: 100%;
-  height: 100%;
-  position: fixed;
-  background-size: 100% 100%;
-  z-index: -1;
-  margin-top: -3%;
-}
-
-.title {
-  display: flex;
-  z-index: 1;
-  font-size: 24px;
-  font-weight: bolder;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 50rpx;
-}
-.header {
-  height: 30px;
-  margin: 5%;
-  background-color:whitesmoke;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-
-}
-.info {
-  height: 120px;
-  margin: 5%;
-}
-
-
-.info image {
-  height: 100px;
-  width: 140px;
-  float: left;
-}
-.item {
-  margin-top: 12px;
-  margin-left: 160px;
+  border:solid 2rpx #e4e4e4;
+  display: -webkit-box;
+  background-color: white;
 }
 .ok { 
-  width: 25%; 
-  margin-top: 35px; 
-  margin-left:60px;
-  float:left;
-  background-color: red;
-  color: white;
+  margin-left: 50rpx;
+  height: 70rpx;
+  margin-top:15rpx;
+  border-radius: 10rpx;
+  line-height: 80rpx;
+  width: 120rpx;
+  font-size: 36rpx;
+  text-align: center;
+  border:solid 2rpx #e4e4e4;
+ }
+ .money{
+  width: 30%;
+  height: 80rpx;
+  margin-top: 10rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 32rpx;
+ }
+ .money text{
+   color:#ff7012
  }
  .delete { 
-  width: 25%; 
-  margin-top: 35px; 
-  margin-right:60px;
-  float:right;
-  color: white;
-  background-color:orange;
+  height: 70rpx;
+  margin-top:15rpx;
+  border-radius: 10rpx;
+  width: 140rpx;
+  text-align: center;
+  border:solid 2rpx #e4e4e4;
+  display: -webkit-box;
  }
- .placeholder-view {
+ .delete image{
+   width: 40rpx;
+   height: 40rpx;
+   margin-top: 20rpx;
+   margin-left: 10rpx;
+ }
+ .all{
+   margin-left: 30rpx;
+   margin-top:10rpx;
+   height: 80rpx;
+   line-height: 80rpx;
+ }
+
+ checkbox .wx-checkbox-input{
+  border-radius: 50%;/* 圆角 */
+  width: 46rpx; /* 背景的宽 */
+  height: 46rpx; /* 背景的高 */
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border: 1rpx solid #FF783B;
+  background: #FF783B;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size:30rpx; /* 对勾大小 30rpx */
+  color:#fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
+ .delete view{
+   margin-left: 10rpx;
+   height: 80rpx;
+   line-height: 80rpx;
+   font-size: 36rpx;
+ }
+
+.cat {
+  position: absolute;
   width: 100%;
+  bottom: 200rpx;
+  top:250rpx;
+  overflow: scroll;
+  background-color: white;
+}
+.info {
+  width: 95%;
+  margin:auto;
+  margin-top: 30rpx;
+  border-radius: 16rpx;
+  border:solid 2rpx #e4e4e4;
   height: 300rpx;
+  display: -webkit-box;
+  box-shadow:0rpx 2rpx 2rpx 2rpx #b4b4b4;
+  background-color: white;
+}
+.error{
+  margin:50rpx
+}
+.info-img{
+  width: 340rpx;
+  height: 260rpx;
+  margin-top:20rpx ;
+  margin-left:30rpx ;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+.info-img image{
+  width: 100%;
+  height:100%;
+}
+.info-content{
+  margin-left: 50rpx;
+  margin-top:20rpx;
+  width: 200rpx;
+}
+.info-name {
+  font-size: 36rpx;
+  margin-bottom:50rpx ;
+}
+
+.info-money{
+  font-size: 30rpx;
+  color:#ff7012
+}
+.bu {
+  margin-left: 5rpx;
+  margin-top:20rpx;
+  font-size: 46rpx;
+  color:#bcbcbc;
+
+}
+
+.bu p {
+  margin-left: 8rpx;
+  margin-right: 8rpx;
+  padding: 2%;
+  border: solid;
+  border-width: 1px;
+  border-color: wheat;
+}
+.info-checkbox{
+  margin-left: 20rpx;
+  margin-top:10rpx
+}
+
+.placeholder-view{
+  position: absolute;
+  height: 300rpx;
+  width: 100%;
+  bottom: 80rpx;
+  z-index:99;
+  display: none;
+  color:#700600;
+  background-color:white;
+  border-radius: 20rpx;
+  border: solid 2rpx #e4e4e4;
+}
+.pla-top{
+  display: -webkit-box;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 36rpx;
+  color:#700600;
+}
+.close{
+  width: 10%;
+  text-align: center;
+  font-size: 52rpx;
+  border: solid 2rpx #e4e4e4;
+}
+.submit{
+  width: 10%;
+  text-align: center;
+  font-size: 48rpx;
+  border: solid 2rpx #e4e4e4;
+}
+.submit image{
+  width: 80%;
+  height: 40rpx;
+}
+.pla-title{
+  width: 80%;
+  text-align: center;
+}
+input{
+  width: 90%;
+  margin:5%;
 }

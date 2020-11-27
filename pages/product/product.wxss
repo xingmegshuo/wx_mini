@@ -18,52 +18,81 @@
 .name {
   margin-top: 50rpx;
   margin-bottom: 10rpx;
-  font-size: 32rpx;
+  font-size:48rpx;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .price {
-  margin-left: 5%;
-  float: left;
+  width: 100%;
   font-size: 32rpx;
-  color: #ff7102;
+  color: #700600;
 }
 
 .sail {
-  float: right;
-  margin-right: 5%;
+  margin-top: 50rpx;
+  width: 100%;
   font-size: 32rpx;
-  color: #bcbcbc;
+}
+.all{
+  margin-top: 50rpx;
+  width: 100%;
+  font-size: 32rpx;
 }
 
 .bu {
-  margin-top: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 100rpx;
+  display: -webkit-box;
   font-size: 36rpx;
-  color:#bcbcbc
+  color:#700600;
+  width: 100%;
+}
+.title{
+  width: 20%;
+}
+.btn{
+  width: 50%;
+  margin-left: 10%;
+  display: -webkit-box;
+  border-radius: 10rpx;
+  border:solid 2rpx #e4e4e4;
+  background-color: white;
+  height: 80rpx;
+}
+.btn image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.nav-text{
+  margin-top: 10rpx;
+  width: 40%;
+  text-align: center;
+}
+.nav{
+  margin-top: 10rpx;
+  margin-left: 5%;
+  width: 20%;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: white;
+  border: solid 3rpx #e4e4e4;
+  border-radius: 20%;
 }
 
-.bu p {
-  margin-left: 8%;
-  margin-right: 8%;
-  padding: 2%;
-  border: solid;
-  border-width: 1px;
-  border-color: wheat;
-}
+
 .button{
-  border-radius: 62rpx;
+  border-radius: 10rpx;
   border-style: solid;
-  border-color: #808080;
+  border-color: #e4e4e4;
   border-width: 2rpx;
   margin-top: 80rpx;
-  width: 200rpx;
   text-align: center;
-  margin-left: 35%;
+  font-size: 42rpx;
+  margin-left: 5%;
+  background-color: white;
 }
 
 .price image{

@@ -1,29 +1,72 @@
-
-<view class="header">
-	<view>
-		<checkbox data-check="{{checkAll}}" bindtap="get_all" checked="{{checkAll}}" />全选
-
+<wxs module="my" src="../../utils/common.wxs"></wxs>
+<view class="address" bindtap="address">
+	<view class="address-top">
+		<image src="../../image/address_logo.png"></image>
+		<view>{{address.human}}</view>
+		<view>{{address.phone}}</view>
+	</view>
+	<view wx:if="{{address.address}}" class="address-bottom">
+		{{address.address}}
+	</view>
+	<view wx:else class="address-bottom">暂无默认地址,请点击设置.</view>
+	<view class="address-img">
+		<image src="../../image/add.png"></image>
 	</view>
 </view>
-<checkbox-group >
 
-	<view class="info" wx:if='{{cat.length==0 }}'>抱歉，您还未添加任何商品</view>
+
+
+
+<checkbox-group>
+
+	<view class="info" wx:if='{{cat.length==0 }}'>
+		<view class="error">抱歉，您还未添加任何商品.</view>
+	</view>
 	<view wx:else class="cat">
 
 		<view class="info" wx:key='index' wx:for='{{cat}}' bindtap="" data-id="">
-			<view>
-				<checkbox value="{{item.id}}" checked="{{item.checked}}"  data-check="{{item.id}}" bindtap="choose"/>
+			<view class="info-img">
+				<image src="https://www.menguoli.com{{item.img}}"></image>
 			</view>
-			<image src="https://www.menguoli.com{{item.img}}"></image>
-			<view class="item">商品名称：{{item.name}}</view>
-			<view class="item">商品数量：{{item.num}}个</view>
-			<view class="item">商品总价：{{item.price*item.num}}¥</view>
+
+			<view class="info-content">
+				<view class="info-name">{{item.name}}</view>
+				<view class="info-orther">
+					<view class="info-money">¥ {{my.sum(item.price,item.num)}}</view>
+					<view class="bu">
+						<p data-num="{{item.id}}" bindtap="remove">-</p>
+						{{item.num}} <p data-num="{{item.id}}" bindtap="add">+</p>
+					</view>
+				</view>
+			</view>
+			<view class="info-checkbox">
+				<checkbox value="{{item.id}}" checked="{{item.checked}}" data-check="{{item.id}}" bindtap="choose" />
+			</view>
 		</view>
 	</view>
 </checkbox-group>
-<button bindtap="payment" class="ok" size="mini">结算</button>
-<button bindtap="delete" class="delete" size="mini">删除</button>
-<view class='placeholder-view'></view>
-<mp-dialog title="订单信息" show="{{dialogShow}}"   bindbuttontap="tapDialogButton" buttons="{{buttons}}">
-<input placeholder="输入订单备注"></input>
-</mp-dialog>
+<viw class="nav">
+	<view bindtap="payment" class="ok" size="mini">结算</view>
+	<view class="money">合计:¥ <text>{{my.sum(all_money,1)}} </text></view>
+	<view bindtap="delete" class="delete" size="mini">
+		<image src="../../image/delete.png"></image>
+		<view>删除</view>
+	</view>
+	<view class="all">
+		<checkbox data-check="{{checkAll}}" bindtap="get_all" checked="{{checkAll}}" />全选</view>
+</viw>
+
+<view class='placeholder-view' wx:if="{{dialogShow==true}}" style="display:block">
+	<view class="pla-top">
+		<view class="close" bindtap="tapDialogButton">x</view>
+		<view class="pla-title">订单结算</view>
+		<view class="submit" bindtap="submit"><image src="../../image/submit.png"></image></view>
+	</view>
+	<input placeholder="请输入订单备注:" value="{{remark}}" bindblur='remarkInput'></input>
+</view>
+<view class="placeholder-view" wx:else></view>
+<!-- <mp-dialog title="订单信息" show="{{dialogShow}}"  buttons="{{buttons}}" >
+	<view class="name">
+			<input value="请输入"></input>
+		</view>
+</mp-dialog> -->
